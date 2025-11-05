@@ -6,17 +6,14 @@ void spiralMatrix(int matrix[][4], int n, int m){
     int end_row = n-1, end_column = m-1;
     while(start_row <= end_row && start_column <= end_column){
 
-        // top
         for (int j=start_column; j<=end_column; j++){
             cout<<matrix[start_row][j]<<" ";
         }
-
-        // right
+        
         for (int i=start_row+1; i<=end_row; i++){
             cout<<matrix[i][end_column] << " ";
         }
 
-        // bottom
         for (int j=end_column-1; j>=start_column; j--){
             if(start_row == end_row){
                 break;
@@ -24,7 +21,6 @@ void spiralMatrix(int matrix[][4], int n, int m){
             cout << matrix[end_row][j]<< " ";
         }
 
-        // left
         for(int i=end_row-1; i>=start_row+1; i--){
            cout<< matrix[i][start_column] << " ";
         }
@@ -43,3 +39,8 @@ int main(){
                         {13,14,15,16}};
     spiralMatrix(matrix, 4, 4);
 }
+
+
+
+// Output
+// 1 2 3 4 8 12 16 15 14 13 9 5 6 7 11 10 
